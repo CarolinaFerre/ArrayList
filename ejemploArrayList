@@ -4,12 +4,18 @@
 /*Hacemos un recorrido del arrayList con el bucle for para imprimir todos los elementos del arrayList
 /*Creamos otro ArrayList de Strings en el cual se crea una función que pregunte mediante contains si ese ArrayList contiene el pais que
 /* escribe el usuario en consola, si es si imprime true, sino es false.
+/* Con iterator borramos Perú e imprimimos de nuevo con for each la lista
 
 
+
+
+
+//EJEMPLO DE ARRAYLIST
 
 package colecciones;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.List;
 import java.util.Random;
@@ -23,11 +29,13 @@ static List Nombres;
 static boolean contiene;
 static String pais;
 	public static boolean ContienePais(List Nombres,String pais) {
+		
 		if (Nombres.contains(pais)) {
 			return contiene=true;
 		}else {
 			return contiene=false;
 		}
+		
 	}
 
 	public static void main(String[] args) {
@@ -57,11 +65,24 @@ static String pais;
 		Nombres.add("México");
 		
 		System.out.println("A continuación vemos si la lista contiene el país que dice el usuario[si lo contiene:true, no:false]");
-		
 		System.out.println("Escribe el país");
 		pais=sc.next();
-		System.out.println(pruebaArraylist.ContienePais(Nombres, pais));
+		System.out.println(pruebaArraylist.ContienePais(Nombres, pais)); 
 		
+		//Borramos Perú con iterator
+		Iterator it=Nombres.iterator();
+	    	while(it.hasNext()) {
+			String Nombres2=(String) it.next();
+			if (Nombres2.contains("Perú")) {
+				it.remove();
+				
+			}
+			
+		}
+	    	//Hacemos el recorrido de la ArrayList tras el borrado de Perú con el foreach
+	    	for (String indice:Nombres) {
+	    		System.out.println(indice);
+	    	}
 		
 	}
 
