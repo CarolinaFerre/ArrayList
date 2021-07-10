@@ -1,0 +1,68 @@
+//EJEMPLO DE ARRAYLIST
+/*Ejercicio en el que creamos una lista de números y probamos a imprimir los números en sus respectivas posiciones
+/*Borramos el número de la lista en la posición 3
+/*Hacemos un recorrido del arrayList con el bucle for para imprimir todos los elementos del arrayList
+/*Creamos otro ArrayList de Strings en el cual se crea una función que pregunte mediante contains si ese ArrayList contiene el pais que
+/* escribe el usuario en consola, si es si imprime true, sino es false.
+
+
+
+package colecciones;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.List;
+import java.util.Random;
+
+public class pruebaArraylist {
+static Scanner sc=new Scanner(System.in);
+static int contador;
+static int numerosloteria;
+static List Numeros;
+static List Nombres;
+static boolean contiene;
+static String pais;
+	public static boolean ContienePais(List Nombres,String pais) {
+		if (Nombres.contains(pais)) {
+			return contiene=true;
+		}else {
+			return contiene=false;
+		}
+	}
+
+	public static void main(String[] args) {
+		//Creamos el arrayList
+		List<Integer> Numeros;
+		Numeros=new ArrayList<>();
+		Numeros.add(15);
+		Numeros.add(34);
+		Numeros.add(56);
+		Numeros.add(104);
+		//Recorremos el ArrayList
+		
+		System.out.println("El número de elementos de la lista es= "+contador);
+		//Para imprimir el número de la posición 3
+		System.out.println("El número de la posición 3 es= "+Numeros.get(3));
+		//Para eliminar el número de la posición 3
+		Numeros.remove(3);
+		for (Integer indice:Numeros) {
+			System.out.println(indice);
+			contador++;
+		}
+		System.out.println("*************************************************");
+		List<String>Nombres;
+		Nombres=new ArrayList<>();
+		Nombres.add("Perú");
+		Nombres.add("Colombia");
+		Nombres.add("México");
+		
+		System.out.println("A continuación vemos si la lista contiene el país que dice el usuario[si lo contiene:true, no:false]");
+		
+		System.out.println("Escribe el país");
+		pais=sc.next();
+		System.out.println(pruebaArraylist.ContienePais(Nombres, pais));
+		
+		
+	}
+
+}
