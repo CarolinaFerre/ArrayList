@@ -64,6 +64,8 @@ static String pais;
 		Nombres.add("Colombia");
 		Nombres.add("México");
 		
+		System.out.println("El número de elementos que hay en el array es= "+Nombres.size());
+		
 		System.out.println("A continuación vemos si la lista contiene el país que dice el usuario[si lo contiene:true, no:false]");
 		System.out.println("Escribe el país");
 		pais=sc.next();
