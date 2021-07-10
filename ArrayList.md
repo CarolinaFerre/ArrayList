@@ -1,6 +1,6 @@
 # ejercicios_ArrayList
 
-ARRAYLIST:
+ARRAYLIST (son listas dinámicas):
 
 La gestión más sencilla de un grupo de objetos se puede conseguir usando una representación secuancial. Basada en un vector (Object[]).
 
