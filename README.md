@@ -2,6 +2,19 @@
 
 ARRAYLIST:
 
+La gestión más sencilla de un grupo de objetos se puede conseguir usando una representación secuancial. Basada en un vector (Object[]).
+
+Características principales:
+
+Ventajas:
+Acceso en tiempo constante si conocemos la posición del objeto.
+No introduce sobrecarga adicional en el almacenamiendo de datos.
+
+Inconvenientes:
+Requiere conocer a priori el número máximo de elementos (reserva de memoria inicial).
+El borrado (o la inserción de manera ordenada) puede requerir el desplazamiento de otros componentes para mantener la contigüidad.
+
+
 DECLARACIÓN Y CREACIÓN DE UN ARRAYLIST
 
 ArrayList es una clase contenedora genérica que implementa arrays dinámicos de objetos de cualquier tipo.
