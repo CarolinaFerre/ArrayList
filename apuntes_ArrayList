@@ -81,7 +81,9 @@ toArray()
 Devuelve un array con todos y cada uno de los elementos que contiene la lista.
 Puedes consultar todos los métodos disponibles en la documentación oficial de la clase
 
+ensureCapacity(11)
 
+Lo que hace es crear directamente un arrayList de 11 elementos. Indica la capacidad del arrayList.
 
 
 ArrayList
