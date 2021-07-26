@@ -53,6 +53,16 @@ contrario.
 
 get(indice)
 Devuelve el elemento de la posición que se indica entre paréntesis.
+Nos devuelve el elemento que hay en esa posición.
+
+ejemplo:
+
+for(int i=0;i<listaEmpleados.size();i++){
+  Empleado e=listaEmpleados.get(i);
+  System.out.println(e.dameDatos()
+ }
+ 
+ 
 
 indexOf(elemento)
 Devuelve la posición de la primera ocurrencia del elemento que se indica entre
@@ -73,6 +83,14 @@ Elimina los elementos que cumplen una determinada condición.
 set(indice, elemento)
 Machaca el elemento que se encuentra en una determinada posición con el
 elemento que se pasa como parámetro.
+
+ejemplo:
+
+listaEmpleados.set(1,new Empleado("Olga",22,2200));
+
+Sustituye los valores de la posición 1 por los valores pasados por parámetro.
+
+
 
 size()
 Devuelve el tamaño (número de elementos) de la lista.
@@ -554,4 +572,36 @@ return (this.nombre).compareTo(g.getNombre());
 public boolean equals(Gato g) {
 return (this.nombre).equals(g.getNombre());
 }
+}
+
+Las colecciones se pueden recorrer mediante for/for-each o con Iterator:
+
+For:
+___
+
+for (int i=0;i<listaEmpleados.size();i++){
+
+For-each:
+_________
+
+for(Empleado e:listaEmpleados){
+
+ITERADORES:
+___________
+
+Permite acceder a los elementos de una colección.
+
+Método Iterator devuelve un objeto de tipo iterator.
+
+Elementos:
+  
+  hasNext(): nos devuelve un dato de tipo boolean y nos dice si hay más elementos o no en la colección que estamos recorriendo.
+  next(): devuelve el siguiente elemento dentro de esta colección.
+  remove(): elimina el elemento con el que estemos interaccionando en ese momento.
+  
+Iterator<Empleado> mi_iterador=listaEmpleados.iterator();
+
+  //Nos devuelve un objeto de tipo iterator que se guarda en la variable mi_iterator.
+  while(mi_iterador.hasNext()){
+    System.out.println(mi_iterador.next().dameDatos());
 }
