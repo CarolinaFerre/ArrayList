@@ -85,6 +85,9 @@ ensureCapacity(11)
 
 Lo que hace es crear directamente un arrayList de 11 elementos. Indica la capacidad del arrayList.
 
+trimToSize()
+
+Lo que hace es cortar el arrayList, que termine en ese punto.
 
 ArrayList
 
