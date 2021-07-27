@@ -1,0 +1,39 @@
+
+/**
+ * 1. Crea un ArrayList con los nombres de 6 compañeros de clase. A
+ *    continuación, muestra esos nombres por pantalla. Utiliza para
+ *    ello un bucle for que recorra todo el ArrayList sin usar ningún
+ *    índice.
+ *
+ * @author Luis José Sánchez
+ */
+
+
+package ejercicios_arrayList;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+public class ejercicio1 {
+static Scanner sc=new Scanner(System.in);
+	static int numero;
+	
+
+	public static void main(String[] args) {
+		
+		int numero=6;
+		ArrayList<String>lista=new ArrayList <String>();
+		System.out.println("La base de datos de los alumnos del IES Tetuán de las Victorias es...");
+		System.out.println("_____________________________________________________________________");
+		lista.add("Marta López Gallardo, 1 DAW");
+		lista.add("Laura Ruiz Ruiz, 1 DAW");
+		lista.add("Marta Pérez López, 2 DAW");
+		lista.add("Cristina Rodriguez Pérez, 2 DAW");
+		lista.add("Ricardo Gómez González, 1 ASIR");
+		lista.add("Pedro Martín Gallardo, 2 ASIR");
+		for(String alumno:lista) {
+			System.out.println(alumno);
+		}
+	}
+
+}
