@@ -1,0 +1,90 @@
+/* 3.	Realiza un programa que introduzca valores aleatorios (entre 0 y 100) en un ArrayList y que luego realice las siguientes operaciones: mostrar el contenido, calcular la suma, borrar aquellos números que serán pares y volver a mostrar el contenido, remplazar los números divisibles por 3 con el valor 0 y volver a mostrar el contenido, por último, si aparece un valor divisible entre cinco, insertar en la posición anterior el valor 555 y volver a mostrar el contenido.
+ El tamaño de la lista también será aleatorio y podrá oscilar entre 10 y 20 elementos ambos inclusive.
+*/
+
+
+package ejercicios_arrayList;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class numerosAleatorios {
+static int contador;
+static int numero;
+	public numerosAleatorios() {
+		
+	}
+
+	public static void main(String[] args) {
+	
+		
+		ArrayList<Integer>lista=new ArrayList<Integer>();
+		ArrayList<Integer>listaPares=new ArrayList<Integer>();
+		ArrayList<Integer>listaImpares=new ArrayList<Integer>();
+		
+		//Se ejecuta random para crear listas con tamaños aleatorios entre 1 y 20
+		int elementos=(int)Math.random()*11+10;
+			//Entero entre 1 y 10 y 10 y 20 porque se le suma 10
+			
+		//Se crea lisa aletaoria con números del 1 al 100 y se almacenan en la ArrayList
+		for(int i=0;i<elementos;i++) {
+			lista.add((int) Math.floor(Math.random()*101));
+			
+		}
+		
+		System.out.println();
+		System.out.println("El total de la lista aleatoria es...");
+		System.out.println();
+		
+		//Se hace el recorrido de la lista con un bucle for
+		for(int i=0;i<lista.size();i++) {
+			System.out.print(lista.get(i));
+		}
+		System.out.println();
+	
+		//Se calcula la suma de los elementos de la lista con for each
+		int suma=0;
+		for(int valor:lista) {
+			suma+=valor;
+		}
+		
+		System.out.println("La suma total de los elementos de la lista es= "+suma);
+		
+    //En caso de que el número sea divisible por 2 se elimina ese número, usamos iterator para recorrer la lista y el método remove.
+    
+		Iterator<Integer>it=lista.iterator();
+		while(it.hasNext()) {
+			if(it.next()%2==0) {
+				it.remove();
+			}
+		}
+		
+    //En caso de que el número sea divisible por 3 se sustituye por 0 con el método set, y recorriendo la lista con el bucle for.
+    
+		for(int i=0;i<lista.size();i++) {
+			if(lista.get(i)%3==0) {
+				lista.set(i, 0);
+			
+			}
+		}
+		
+		//En caso de que el número sea divisible por 5 se añade el valor 555 y se avanza de posición para seguir recorriendo el ciclo y leyendo los números.
+    
+		for(int i=0;i<lista.size();i++) {
+			int valor=(int)lista.get(i);
+			if(valor!=0 && valor%5==0) {
+				lista.add(i,555);
+				i++;
+			}
+		}
+    //Se hace el reccorrido de la lista para ver los cambios
+    
+		System.out.println("A continuación se borran los números pares de la lista y se sustituyen los impares divisibles entre 3 por 0,también si hay números divisibles por 5 se sustituye ese número en la anterior posición por 555");
+		System.out.println("El total de la lista aleatoria es tras los cambios...");
+		System.out.println();
+		for(int i=0;i<lista.size();i++) {
+			System.out.print(lista.get(i));
+		}
+	}
+
+}
