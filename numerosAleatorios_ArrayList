@@ -1,4 +1,6 @@
-/* 3.	Realiza un programa que introduzca valores aleatorios (entre 0 y 100) en un ArrayList y que luego realice las siguientes operaciones: mostrar el contenido, calcular la suma, borrar aquellos números que serán pares y volver a mostrar el contenido, remplazar los números divisibles por 3 con el valor 0 y volver a mostrar el contenido, por último, si aparece un valor divisible entre cinco, insertar en la posición anterior el valor 555 y volver a mostrar el contenido.
+/* 3.	Realiza un programa que introduzca valores aleatorios (entre 0 y 100) en un ArrayList y que luego realice las siguientes operaciones: 
+mostrar el contenido, calcular la suma, borrar aquellos números que serán pares y volver a mostrar el contenido, remplazar los números divisibles por 3 con el valor 0 
+y volver a mostrar el contenido, por último, si aparece un valor divisible entre cinco, insertar en la posición anterior el valor 555 y volver a mostrar el contenido.
  El tamaño de la lista también será aleatorio y podrá oscilar entre 10 y 20 elementos ambos inclusive.
 */
 
