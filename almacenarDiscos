@@ -1,0 +1,83 @@
+
+
+
+/*Crear una tienda de discos en las que se almacenen
+ * los titulos de los discos en un ArrayList  y crear un método de ficha
+ * que muestre todos los datos de los discos.
+ */
+
+
+package ejercicios_ArrayList;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class ejercicio5 {
+static Scanner sc=new Scanner (System.in);
+private String nombre;
+private String cantante1;
+private int año1;
+private String cantante2;
+private int año2;
+private String cantante3;
+private int año3;
+
+	public ejercicio5(String nombre) {
+		this.nombre=nombre;
+		this.cantante1="Britney Spears";
+		this.año1=1999;
+		this.cantante2="Michael Jackson";
+		this.año2=1989;
+		this.cantante3="Rihanna";
+		this.año3=2016;
+	}
+	public String getDiscos() {
+		return this.nombre;
+	}
+	public  void getFichaDiscos1() {
+		System.out.println("Nombre de disco : "+this.nombre);
+		System.out.println("Cantante : "+this.cantante1);
+		System.out.println("Año : "+this.año1);
+	}
+	public void getFichaDiscos2() {
+		System.out.println("Nombre de disco : "+this.nombre);
+		System.out.println("Cantante : "+this.cantante2);
+		System.out.println("Año : "+this.año2);
+	}
+	public void getFichaDiscos3() {
+		System.out.println("Nombre del disco: "+this.nombre);
+		System.out.println("Cantante : "+this.cantante3);
+		System.out.println("Año : "+this.año3);
+	}
+		
+	public static void main(String[] args) {
+	
+		System.out.println("TIENDA DE DISCOS");
+		
+		ArrayList<ejercicio5>lista=new ArrayList<>();
+		
+		ejercicio5 autor1=new ejercicio5("Baby one more time");
+		ejercicio5 autor2=new ejercicio5("Bad");
+		ejercicio5 autor3=new ejercicio5("Anti");
+		
+		lista.add(autor1);
+		lista.add(autor2);
+		lista.add(autor3);
+		
+		System.out.println("Los títulos de los discos son...");
+		
+		for(ejercicio5 i:lista) {
+			System.out.println(i.getDiscos());
+		}
+		
+		System.out.println("La ficha de los discos es...");
+		System.out.println("*****************************************");
+		autor1.getFichaDiscos1();
+		System.out.println("*****************************************");
+		autor2.getFichaDiscos2();
+		System.out.println("*****************************************");
+		autor3.getFichaDiscos3();
+		System.out.println("*****************************************");
+	}
+
+}
