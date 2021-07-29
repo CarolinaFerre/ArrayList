@@ -1,0 +1,37 @@
+
+
+
+/* Hacer una lista de números introducidos por el usuario
+ * y con el tamaño del arrayList aleatorio, y luego ordenarlo
+ */
+
+
+package ejercicios_ArrayList;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+public class ejercicio3 {
+	
+static Scanner sc= new Scanner(System.in);
+
+static int numero;
+	public ejercicio3() {
+		
+	}
+
+	public static void main(String[] args) {
+		ArrayList<Integer>lista=new ArrayList<Integer>();
+		int tamañoArrayList=(int) (Math.random()*9+1);
+		for(int i=0;i<tamañoArrayList;i++) {
+			numero=sc.nextInt();
+			lista.add(numero);
+		}
+		Collections.sort(lista);
+		for(Integer i:lista) {
+			System.out.println(i);
+		}
+
+	}
+
+}
