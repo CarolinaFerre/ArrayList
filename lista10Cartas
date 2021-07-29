@@ -1,0 +1,34 @@
+
+/*Crear una lista de 10 cartas en objetos al azar y almacenarlos en arraylist*/
+
+
+package ejercicios_ArrayList;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class ejercicio8 {
+static Scanner sc=new Scanner(System.in);
+private static String carta;
+	public ejercicio8() {
+		this.carta=carta;
+	}
+	public String getCarta() {
+		return this.carta;
+	}
+
+	public static void main(String[] args) {
+		ArrayList<String>Baraja=new ArrayList<>();
+		int numero=(int) Math.random()*11+10;
+		for(int i=0;i<numero;i++) {
+			carta=sc.nextLine();
+			Baraja.add(carta);
+		}
+		
+		
+		for(String i:Baraja) {
+			System.out.print(i);
+		}
+	}
+
+}
