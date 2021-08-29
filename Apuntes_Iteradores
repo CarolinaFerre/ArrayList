@@ -1,0 +1,101 @@
+
+Un iterador es un objeto que permite ciclar a través de una colección, obtener o remover elementos.
+Antes de que puedas acceder a una colección a través de un iterador, primero debes obtener uno.
+Cada una de las clases de colecciones provee un método iterator() que devuleve un iterador desde el comienzo de la colección.
+
+Al utilizar este objeto iterador, puedes acceder a cada elemento en la colección, un elemento a la vez.
+
+La clase Iterator provee los siguientes métodos:
+
+hashNext(): Devuelve true(verdadero) si hay al menos un elemento adicional; de otra manera retorna false(falso).
+next(): Devuelve el siguiente objeto y avanza el iterador.
+remove(): Remueve de la colección el último objeto que fue retornado por next.
+
+La clase Iterator debe ser importada del paquete java.util.
+
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class MyClass{
+  public static voud main(String[]args){
+    LinkedList<String>animals=new LinkedList<String>();
+    animals.add("fox");
+    animals.add("cat");
+    animals.add("dog");
+    animals.add("rabbit");
+    
+    Iterator<String> it=animals.iterator();
+    
+    String value=it.next();
+    System.out.println(value);
+    }
+   }
+   
+   
+   it.next devuelve el primer elemento en la lista y luego mueve al iterador al siguiente elemento. 
+   Cada vez que invoques it.next(),el iterador se mueve al siguiente elemento de la lista.
+   
+   ejemplo:
+   ¿Cuál es la salida de este código?
+   
+   List<Integer> list=new ArrayList<Integer>();
+   
+   list.add(10);
+   list.add(20);
+   list.add(30);
+   
+   Iterator<Integer>it=list.iterator();
+   
+   it.next();
+   
+   System.out.println(it.next());
+   
+   La salida es 20.
+   
+   
+   ITERADORES
+   ___________
+   Normalmente los iteradores son utilizados en bucles. EN cada iteración del bucle, puedes acceder al elemento correspondiente de la lista.
+   
+   ejemplo:
+   
+   import java.util.Iterator;
+   import java,util.LinkedList;
+   
+   public class MyClass{
+    public static void main (String []args){
+      LinkedList<String> animals=new LinkedList<String>();
+      
+      animals.add("fox");
+      animals.add("cat"),
+      animals.add("dog");
+      animals.add("rabbit");
+      
+      Iterator<String> it= animals.iterator();
+      
+      while(it.hashNext()){
+        String value=it.next();
+        
+        System.out.println(value);
+        }
+       }
+      }
+      
+      Aquí, el bucle while determina si el iterador tiene elementos adicionales, imprime el valor del elemento y avanza el iterador al siguiente.
+      
+      
+      ejemplo:
+      
+      Iterator<Integer> it= list.iterator();
+      
+      while(it.hashNext()){
+        int value=it.next();
+        
+        System.out.println(value);
+        }
+       
+       
+       
+       
+      
+      
