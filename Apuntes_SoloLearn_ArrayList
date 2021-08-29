@@ -80,3 +80,74 @@ public class MyClass{
    
    La salida es B
    
+   
+   
+   ORDENAR LISTAS
+   ______________
+
+Para la manipulación de datos en diferentes tipos de colecciones, la API de Java provee una clase Collections, la cual está incluida en el paquete java.util.
+
+Uno de los métodos más populares de la clase Collections es sort(), el cual ordena los elementos de tu colección. Los métodos en la clase Collections son estáticos, 
+por lo que no necesitas un objeto Collections para invocarlos.
+
+public class MyClass{
+  public static void main(String[]args){
+    ArrayList<String>animals= new ArrayList<String>();
+    
+    animals.add("tiger");
+    animals.add("cat");
+    animals.add("snake");
+    animals.add("dog");
+    
+    Colections.sort(animals);
+    
+    System.out.println(animals);
+    }
+   }
+   
+   Como puedes ver, los elementos han sido ordenados alfabéticamente.
+   
+   
+   ¿Cuál es la salida de este código?
+   
+   List <String> list=new ArrayList<String>();
+   
+   list.add("b");
+   list.add("a");
+   list.add("c");
+   
+   Collections.sort(list);
+   System.out.println(list.get(0));
+   
+   La salida es a.
+   
+   También se puede invocar los métodos sort() en diferentes tipos de Listas, como Enteros.
+   
+   import java.util.ArrayList;
+   import java,util.Collections;
+   
+   public class MyClass{
+   
+    public static void main(String []args){
+      ArrayList<Integer> nums=new ArrayList<Integer>();
+      
+      nums.add(3);
+      nums.add(36);
+      nums.add(73);
+      nums.add(40);
+      nums.add(1);
+      
+      Collections.sort(nums);
+      
+      System.out.println(nums);
+      }
+     }
+     
+     Otros métodos útiles en la clase Colections:
+     
+     max (Collection c):Devuelve el elemento máximo en "c" determinado por el ordenamiento natural.
+     min(Collection c):Devuelve el elemtno mínimo en "c" determinado por el ordenamiento natural.
+     reverse (List list): Invierte el orden de la secuencia en "list".
+     shuffle(List list): Resuelve (ordena en forma aleatoria) los elementos en "lis".
+     
+     
