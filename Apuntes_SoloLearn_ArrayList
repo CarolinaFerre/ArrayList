@@ -1,0 +1,82 @@
+
+La API de Java provee clases especiales para almacenar y manipular grupos de objetos.
+
+Una de estas clases es la ArrayList(Listas de arreglos). Los arreglos estándar de Java son de longitud fija, lo que significa que después de que
+son creados, no pueden expandirse ni encogerse.
+Por otro lado, las listas de arreglos son creadas con un tamaño inicial, pero cuando este tamaño es sobrepasado, la colección es aumentada
+automáticamente.
+
+Cuando los objetos son eliminados, la Lista de Arreglo puede encoger su tamaño. Fíjate que la clase ArrayList está en el paquete java.util,
+por lo que es necesario importarlo antes de poder utilizarla.
+
+
+Crea una lista de arreglo como harías con cualquier objeto:
+
+import java.util.ArrayList;
+/...
+ArrayList colors=new ArrayList();
+
+
+Opcionalmente, puedes especificar una capacidad y tipo de objetos que la lista de arreglo almacenará:
+
+ArrayList <String> colors=new ArrayList <String>(10);
+
+El código anterior define una lista de arreglo de Strings con 10 como su tamaño inicial.
+
+Las listas de arreglos almacenan objetos. Por lo tanto, el tipo especificado debe ser un tipo de clase. No puedes pasar, por ejemlo int como el tipo de objeto.
+En lugar de eso, utiliza los tipos de clases especiales que correspondas al tipo de valor deseado, como Integer para int, DOuble para double y así sucesivamente.
+
+
+Ejemplo:
+
+ArrayList <Integer>as=new ArrayList<Integer>(9);
+
+
+La clase ArrayList provee varios métodos útiles para manipular sus objetos.
+
+El método add() añade nuevos objetos al ArrayList. En contraste, el método remove() elimina objetos del ArrayList.
+
+ejemplo:
+
+import java.util.ArrayList;
+
+public class MyClass{
+
+  public static void main (String [] args){
+    ArrayList<String> colors=new ArrayList<String>();
+    colors.add("Red");
+    colors.add("Blue");
+    colors.add("Green");
+    colors.add("Orange");
+    colors.remove("Green");
+    
+    System.out.println(colors);
+    }
+   }
+   
+   
+   
+   Entre otros métodos útiles se incluyen los siguientes:
+   
+   -contains(): Devuelve true (verdadero) si la lista contiene el elemento especificado
+   -get(int index): Devuelve el elemento en la lista que se encuentra en la ubicación especificada.
+   -size():Devuelve el número de elementos en la lista
+   -clear(): Elimina todos los elementos de la lista
+   -set():Método que permite sustituir un elemento por otro dentro de un ArrayList. Así al método tenemos que indicarle la posición en la que queremos hacer la sustitución del elemento y el nuevo elemento.
+    En el caso que la posición del ArrayList esté fuera de su rango, es decir, menor que cero o mayor que el tamaño del ArrayList se elevará una excepción IndexOutOfBoundsException.
+    public E set(int index, E element)
+   
+   
+   
+   ¿Cuál es la salida de este código?
+   
+   ArrayList <String> list=new ArrayList <String>();
+   
+   list.add("A");
+   list.add("B");
+   list.add("C");
+   
+   System.out.println(list.get(1));
+   
+   La salida es B
+   
