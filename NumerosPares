@@ -1,0 +1,71 @@
+
+
+
+/*Introduzco números hasta llegar a tamaño deseado por usuario y si son divisibles entre 2 se
+ * introducen dentro del arrayList de tamaño que elige el usuario y se calcula el promedio
+ * de esos tres números.
+ */
+
+package ejercicios_arrayList;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class arraysListPares {
+	static Scanner sc=new Scanner(System.in);
+	
+	static int num;
+	static int contador=0;
+	static int suma=0;
+	public static void main(String[]args) {
+		
+		//Declaramos el arrayList
+		ArrayList<Integer>lista=new ArrayList<Integer>();
+		
+		try {
+		//Usuario selecciona el tamaño que desea en la lista
+		System.out.println("Introduce el tamaño que quieres en el arrayList");
+		int tamaño=sc.nextInt();
+		
+		
+		//Introduzco números hasta que la lista llegue al tamaño deseado
+		System.out.println("Introduce números");
+		
+		
+			while(lista.size()<=tamaño) {
+				num=sc.nextInt();
+				
+				if(num%2==0) {
+					lista.add(num);
+					contador++;
+				}
+			}
+		}catch(Exception e) {
+			System.out.println("Debe de introducir números no caracteres");
+			System.exit(0);
+		}
+		//Pasamos todos los datos a otra lista
+		
+		ArrayList<Integer>lista2=new ArrayList<Integer>(1);
+		
+		lista2.addAll(lista);
+		
+		
+		//Declaramos el iterator
+		Iterator<Integer> it=lista2.iterator();
+		//Leemos la lista con el iterator
+		
+		System.out.println("El resultado de la lista es: ");
+		while(it.hasNext()) {
+			int value=it.next();
+			suma+=value;
+			
+			System.out.println(value);
+		}
+		System.out.println("La suma de los números de la lista es: "+suma);
+		System.out.println("El número de elementos de la lista es: "+contador);
+		int promedio=suma/contador;
+		System.out.println("El promedio es "+promedio);
+		
+	}
+}
