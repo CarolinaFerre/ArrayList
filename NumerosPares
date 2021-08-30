@@ -1,6 +1,5 @@
 
 
-
 /*Introduzco números hasta llegar a tamaño deseado por usuario y si son divisibles entre 2 se
  * introducen dentro del arrayList de tamaño que elige el usuario y se calcula el promedio
  * de esos tres números.
@@ -26,13 +25,13 @@ public class arraysListPares {
 		//Usuario selecciona el tamaño que desea en la lista
 		System.out.println("Introduce el tamaño que quieres en el arrayList");
 		int tamaño=sc.nextInt();
-		
+		int tamaño1=tamaño-1;
 		
 		//Introduzco números hasta que la lista llegue al tamaño deseado
 		System.out.println("Introduce números");
 		
 		
-			while(lista.size()<=tamaño) {
+			while(lista.size()<=tamaño1) {
 				num=sc.nextInt();
 				
 				if(num%2==0) {
