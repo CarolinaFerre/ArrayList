@@ -1,0 +1,62 @@
+
+
+
+/*Escribe un programa que tome las palabras como entrada y 
+	las agregue a la 
+ * LinkedList hasta que su tamaño no sea igual a 5,
+ * y después genere sólo aquellas palabras cuya longitud sea superior a 4 caracteres.
+ * 
+ */
+
+package ejercicios_arrayList;
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class palabras5 {
+	static Scanner sc=new Scanner(System.in);
+	
+	//Fijamos el tamaño del arrayList a 5, lo restamos a -1 
+	//porque es length-1
+	
+	static int tamaño=5-1;
+	
+	public static void main(String[] args) {
+		
+		//Creamos la linkedList
+		LinkedList<String>lista= new LinkedList<String>();
+		
+		//Introducimos caracteres y nos quedamos sólo con los
+		//que sean mayor de 4 caracteres
+		
+		try {
+		System.out.println("Introduce cadenas de caracteres...");
+		
+		while(lista.size()<=tamaño) {
+			String palabra=sc.nextLine();
+			//Añadimos las palabras cuya longitud sea superior a 4
+			if(palabra.length()>4) {
+				lista.add(palabra);
+				}
+			}
+		
+		}catch(Exception e) {
+			System.err.println("ERROR");
+			System.exit(0);
+		}
+		//Ordenamos la lista
+
+		Collections.sort(lista);
+	
+		//Recorremos la lista creada
+		
+		for(String i:lista) {
+		
+		System.out.println(i);
+		
+		}
+		System.out.println(lista.size());
+	}
+}
