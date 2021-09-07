@@ -1,0 +1,123 @@
+
+//EJERCICIO EXAMEN CONVOCATORIA ORDINARIA 2021
+
+/* 
+2. Realizar TRES de los siguientes métodos estáticos a elegir:
+(1.5 Puntos)
+A) Realizar una función que devuelva un array de enteros que guarde las posiciones donde aparece una letra en un String. Si no aparece en ninguna posición devolverá null.
+static public int[] posicionesLetra( String cadena, char letra) {
+..
+}
+Ejemplo:
+posicionesLetra ("Hola Pepe" ,’a’)      -> {3}
+posicionesLetra ("Hola Pepe",’e’)       -> {6,8}
+posicionesLetra ("Hola Hola Pepa",’a’)  -> {3,8,13}
+posicionesLetra ("Hola Pepe" ,’i’)      -> null
+
+Yo lo he introducido en ArrayList no en array
+ */
+
+package examen2021;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class contarVocales {
+	static Scanner sc=new Scanner(System.in);
+	
+	//Declaración de variables
+	static int contadorVocales=0;
+	static ArrayList posiciones;
+	static int contadorVocalesUsuario=0;
+	static char vocal;
+	
+	//Contador de vocales de la palabra
+	public static void contarVocales_(String palabra) {
+		for(int i=0;i<palabra.length();i++) {
+			if((palabra.charAt(i)=='a')||(palabra.charAt(i)=='A')||(palabra.charAt(i)=='e')||(palabra.charAt(i)=='E')||(palabra.charAt(i)=='i')||(palabra.charAt(i)=='I')||(palabra.charAt(i)=='o')||(palabra.charAt(i)=='O')||(palabra.charAt(i)=='u')||(palabra.charAt(i)=='U')) {
+				
+				contadorVocales++;
+			}
+		}
+		System.out.println("La cantidad de vocales que hay en esta palabra es= "+contadorVocales);
+		
+	}
+	
+	//Introducir en arrayList las posiciones de las vocales de la palabra
+	public static void CalcularPosiciones(String palabra,ArrayList posiciones) {
+		for(int i=0;i<palabra.length();i++) {
+			
+			if(palabra.charAt(i)=='a') {
+				int posicion=palabra.indexOf("a");
+				String posicion_=String.valueOf(posicion);
+				posiciones.add(posicion_);
+					
+			}else if(palabra.charAt(i)=='e')  {
+				int posicion=palabra.indexOf("e");
+				String posicion_=String.valueOf(posicion);
+				posiciones.add(posicion_);
+					
+			}else if(palabra.charAt(i)=='i')  {
+				int posicion=palabra.indexOf("i");
+				String posicion_=String.valueOf(posicion);
+				posiciones.add(posicion_);
+					
+			}else if(palabra.charAt(i)=='o') {
+				int posicion=palabra.indexOf("o");
+				String posicion_=String.valueOf(posicion);
+				posiciones.add(posicion_);
+					
+					
+			}else if(palabra.charAt(i)=='u') {
+				int posicion=palabra.indexOf("u");
+				String posicion_=String.valueOf(posicion);
+				posiciones.add(posicion_);
+					
+					
+			}
+		}
+	}
+		
+	//Recorrer ArrayList de vocales en total de la palabra
+	public static void RecorrerArray(ArrayList posiciones) {
+		for(int i=0;i<posiciones.size();i++) {
+			System.out.println(posiciones.get(i));
+		}
+	}
+	
+	//Usuario introduce vocal a buscar,se cuenta el número de veces que está y se introduce en arrayList
+	public static void vocalUsuario(ArrayList posicionesUsuario,int contadorVocalesUsuario,String palabra) {
+		System.out.println("Introduce vocal a buscar");
+		vocal=sc.next().charAt(0);
+		for(int i=0;i<palabra.length();i++) {
+			if(palabra.charAt(i)==vocal) {
+				String vocal_=String.valueOf(vocal);
+				int posicionVocal=palabra.indexOf(vocal_);
+				String posicionVocal_=String.valueOf(posicionVocal);
+				posicionesUsuario.add(posicionVocal);
+				
+			}else {
+				posicionesUsuario.add(null);
+			}
+		}
+	}
+	public static void recorrerArrayVocal(ArrayList posicionesUsuario) {
+		for(int i=0;i<posicionesUsuario.size();i++) {
+			System.out.println(posicionesUsuario.get(i));
+		}
+	}
+	
+	public static void main(String[] args) {
+		ArrayList<String>posiciones=new ArrayList<String>(contadorVocales);
+		ArrayList<String>posicionesUsuario=new ArrayList<String>();
+		System.out.println("Introduzca una palabra para contar sus vocales");
+		String palabra=sc.nextLine();
+		contarVocales.contarVocales_(palabra);
+		contarVocales.CalcularPosiciones(palabra,posiciones);
+		contarVocales.RecorrerArray(posiciones);
+		System.out.println("***********************************");
+		contarVocales.vocalUsuario(posicionesUsuario, contadorVocalesUsuario, palabra);
+		contarVocales.recorrerArrayVocal(posicionesUsuario);
+	}
+
+}
